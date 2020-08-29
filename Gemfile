@@ -19,6 +19,9 @@ gem 'bootstrap', '~> 5.0.0.alpha1'
 gem 'sassc', '~> 2.1.0'
 gem 'jquery-rails'
 
+gem 'stock_quote', '~> 3.0'
+gem 'devise', '~> 4.7', '>= 4.7.2'
+
 group :development, :test do
   
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
