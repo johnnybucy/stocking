@@ -1,32 +1,31 @@
-<!DOCTYPE html>
 <html>
-  <head>
-    <title>my stock market app</title>
+    <head>
+        <title>my stock market app</title>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <%= csrf_meta_tags %>
+        <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+        <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 
-  <body>
+        <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    </head>
 
-   
- <%= render 'home/navbar' %>
-<div class="container">
+    <body>
 
-  <%= render 'home/flash'%>
-      
 
-<br/>
-    <%= yield %>
-</div>
-    <%= render 'home/footer'%>
+        <%= render 'home/navbar' %>
+        <div class="container">
 
-    
+            <%= render 'home/flash'%>
 
-  </body>
+
+            <br/>
+            <%= yield %>
+        </div>
+        <%= render 'home/footer'%>
+
+
+    </body>
 </html>
+
