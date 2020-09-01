@@ -20,17 +20,18 @@
                     <% @nothing = "N/A"%>
                 <% elsif @sym %>
                     <% @api = StockQuote::Stock.new(api_key:'pk_efbaa5b122c44e1b9bb71680e9d0562b')%>
-                    <% @ticker = StockQuote::Stock.quote("fb") %>
+                    <%begin%>
+                    <% @ticker = StockQuote::Stock.quote(@sym) %>
 
-                    <% if !@sym %>
-                        <% @error= "N/A " + exception.message %>
+                    <% rescue => exception %>
+                        <% @ticker.company_name = "ERROR: " + exception.message %>
                     <% end %>
 
 
                     <tr>
-                        <td><%= @ticker.company_name %></td>
+                        <td><%= link_to @ticker.company_name, stock %></td>
                         <td><%= @ticker.latest_price %></td>
-                        <td><%= link_to 'Show', stock %></td>
+                        
                         <td><%= link_to 'Edit', edit_stock_path(stock) %></td>
                         <td><%= link_to 'Destroy', stock, method: :delete, data: { confirm: 'Are you sure?' } %></td>
                     </tr>
